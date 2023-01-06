@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,9 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // News Routes
+    Route::get('/news/add-news', [NewsController::class, 'addNews'])->name('news.add-news');
+    Route::get('/news/manage-news', [NewsController::class, 'manageNews'])->name('news.manage-news');
+    Route::get('/news/all-news', [NewsController::class, 'allNews'])->name('news.all-news');
 });
