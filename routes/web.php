@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,11 +25,18 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
+
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // News Routes
     Route::get('/news/add-news', [NewsController::class, 'addNews'])->name('news.add-news');
     Route::get('/news/manage-news', [NewsController::class, 'manageNews'])->name('news.manage-news');
     Route::get('/news/all-news', [NewsController::class, 'allNews'])->name('news.all-news');
-    Route::post('/news/save-news', [NewsController::class, 'allNews'])->name('news.save-news');
+    Route::post('/news/save-news', [NewsController::class, 'allNews'])->name('news.save-news');// News Routes
+
+    // Category Routes
+    Route::get('/category/add-category', [CategoryController::class, 'addCategory'])->name('category.add-category');
+    Route::get('/category/manage-categories', [CategoryController::class, 'manageCategories'])->name('category.manage-categories');
+    Route::get('/category/all-categories', [CategoryController::class, 'allCategories'])->name('category.all-categories');
+    Route::post('/category/save-category', [CategoryController::class, 'saveCategory'])->name('category.save-category');
 });

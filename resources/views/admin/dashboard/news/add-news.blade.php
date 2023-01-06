@@ -1,7 +1,7 @@
 @extends('admin.dashboard.master')
 
 @section('title')
-    Dashboard
+    Add News
 @endsection
 
 @section('main-content')

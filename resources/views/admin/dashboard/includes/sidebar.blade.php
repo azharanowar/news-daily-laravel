@@ -95,9 +95,9 @@
         <div id="collapseCategories" class="collapse" aria-labelledby="headingCategories" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">News Categories:</h6>
-                <a class="collapse-item" href="">Add Category</a>
-                <a class="collapse-item" href="">Manage Categories</a>
-                <a class="collapse-item" href="">All Categories</a>
+                <a class="collapse-item" href="{{ route('category.add-category') }}">Add Category</a>
+                <a class="collapse-item" href="{{ route('category.manage-categories') }}">Manage Categories</a>
+                <a class="collapse-item" href="{{ route('category.all-categories') }}">All Categories</a>
             </div>
         </div>
     </li>
