@@ -11,7 +11,7 @@
 
                 <h2 class="text-center">Add New Category</h2>
                 @if(session('message'))
-                    <h4 class="text-center text-success py-3">{{ session('message') }}</h4>
+                    <h5 class="text-center text-success py-2">{{ session('message') }}</h5>
                 @endif
 
                 <form action="{{ route('category.save-category') }}" method="POST" class="form" enctype="multipart/form-data">

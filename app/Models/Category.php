@@ -15,8 +15,20 @@ class Category extends Model
 
         self::$category->name = $request->name;
         self::$category->description = $request->description;
-        self::$category->image = $request->image;
+        self::$category->image = self::getSavedImageURL($request);
         self::$category->status = $request->status;
         self::$category->save();
+    }
+
+    public static function getSavedImageURL($request) {
+        self::$image = $request->file('image');
+
+        self::$imageNewName = rand() . '.' . self::$image->getClientOriginalExtension();
+        self::$directory = 'admin/images/category-images/';
+        self::$imageURL = self::$directory . self::$imageNewName;
+        self::$image->move(self::$directory, self::$imageNewName);
+
+        return self::$imageURL;
+
     }
 }
