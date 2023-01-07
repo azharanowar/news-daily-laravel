@@ -48,15 +48,22 @@ class Category extends Model
         self::$category->save();
     }
 
+    public static function deleteCategory($id) {
+        self::$category = Category::find($id);
+        self::deleteExistingImage(self::$category->image);
+        self::$category->delete();
+    }
+
     public static function getSavedImageURL($request) {
         self::$image = $request->file('image');
+        if (self::$image) {
+            self::$imageNewName = rand() . '.' . self::$image->getClientOriginalExtension();
+            self::$directory = 'admin/images/category-images/';
+            self::$imageURL = self::$directory . self::$imageNewName;
+            self::$image->move(self::$directory, self::$imageNewName);
 
-        self::$imageNewName = rand() . '.' . self::$image->getClientOriginalExtension();
-        self::$directory = 'admin/images/category-images/';
-        self::$imageURL = self::$directory . self::$imageNewName;
-        self::$image->move(self::$directory, self::$imageNewName);
-
-        return self::$imageURL;
+            return self::$imageURL;
+        }
     }
 
     public static function deleteExistingImage($image) {

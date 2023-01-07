@@ -46,4 +46,10 @@ class CategoryController extends Controller
 
         return redirect('/category/manage-categories')->with('message', 'Category status successfully updated.');
     }
+
+    public function deleteCategory(Request $request, $id) {
+        Category::deleteCategory($id);
+
+        return redirect('/category/manage-categories')->with('message', 'Category successfully deleted.');
+    }
 }

@@ -56,9 +56,14 @@
                                         <p>{{ $category->status == 1 ? 'Active' : 'Inactive' }}</p>
                                     </td>
                                     <td>
-                                        <a href="{{ route('category.change-status', ['id' => $category->id]) }}" class="btn btn-sm btn-secondary mb-1">{{ $category->status == 0 ? 'Active' : 'Inactive' }}</a>
-                                        <a href="{{ route('category.update', ['id' => $category->id]) }}" class="btn btn-sm btn-success mb-1">Update</a>
-                                        <a href="{{ route('category.change-status', ['id' => $category->id]) }}" class="btn btn-sm btn-danger mb-1">{{ $category->status == 0 ? 'Active' : 'Inactive' }}</a>
+                                        <div class="d-flex" style="gap: 0.30rem;">
+                                            <a href="{{ route('category.change-status', ['id' => $category->id]) }}" class="btn btn-sm btn-secondary">{{ $category->status == 0 ? 'Active' : 'Inactive' }}</a>
+                                            <a href="{{ route('category.update', ['id' => $category->id]) }}" class="btn btn-sm btn-success">Update</a>
+                                            <form action="{{ route('category.delete', ['id' => $category->id]) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are your sure to delete this category?')">Delete</button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach
