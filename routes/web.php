@@ -41,4 +41,5 @@ Route::middleware([
     Route::get('/category/manage-categories', [CategoryController::class, 'manageCategories'])->name('category.manage-categories');
     Route::get('/category/change-status/{id}', [CategoryController::class, 'changeCategoryStatus'])->name('category.change-status');
     Route::get('/category/update/{id}', [CategoryController::class, 'updateCategory'])->name('category.update');
+    Route::post('/category/save-updated-info/{id}', [CategoryController::class, 'saveUpdatedCategoryInfo'])->name('category.save-updated-info');
 });

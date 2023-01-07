@@ -57,8 +57,8 @@
                                     </td>
                                     <td>
                                         <a href="{{ route('category.change-status', ['id' => $category->id]) }}" class="btn btn-sm btn-secondary mb-1">{{ $category->status == 0 ? 'Active' : 'Inactive' }}</a>
-                                        <a href="{{ route('category.update', ['id' => $category->id]) }}" class="btn btn-sm btn-info mb-1">Update</a>
-                                        <a href="{{ route('category.change-status', ['id' => $category->id]) }}" class="btn btn-sm btn-secondary mb-1">{{ $category->status == 0 ? 'Active' : 'Inactive' }}</a>
+                                        <a href="{{ route('category.update', ['id' => $category->id]) }}" class="btn btn-sm btn-success mb-1">Update</a>
+                                        <a href="{{ route('category.change-status', ['id' => $category->id]) }}" class="btn btn-sm btn-danger mb-1">{{ $category->status == 0 ? 'Active' : 'Inactive' }}</a>
                                     </td>
                                 </tr>
                             @endforeach

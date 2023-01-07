@@ -34,4 +34,16 @@ class CategoryController extends Controller
 
         return back()->with('message', 'Category status successfully updated.');
     }
+
+    public function updateCategory($id) {
+        return view('admin.dashboard.category.update-category', [
+            'category'    =>  Category::find($id),
+        ]);
+    }
+
+    public function saveUpdatedCategoryInfo(Request $request, $id) {
+        Category::saveUpdatedCategoryInfo($request, $id);
+
+        return redirect('/category/manage-categories')->with('message', 'Category status successfully updated.');
+    }
 }
