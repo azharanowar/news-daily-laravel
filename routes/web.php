@@ -36,7 +36,9 @@ Route::middleware([
 
     // Category Routes
     Route::get('/category/add-category', [CategoryController::class, 'addCategory'])->name('category.add-category');
-    Route::get('/category/manage-categories', [CategoryController::class, 'manageCategories'])->name('category.manage-categories');
-    Route::get('/category/all-categories', [CategoryController::class, 'allCategories'])->name('category.all-categories');
     Route::post('/category/save-category', [CategoryController::class, 'saveCategory'])->name('category.save-category');
+    Route::get('/category/all-categories', [CategoryController::class, 'allCategories'])->name('category.all-categories');
+    Route::get('/category/manage-categories', [CategoryController::class, 'manageCategories'])->name('category.manage-categories');
+    Route::get('/category/change-status/{id}', [CategoryController::class, 'changeCategoryStatus'])->name('category.change-status');
+    Route::get('/category/update/{id}', [CategoryController::class, 'updateCategory'])->name('category.update');
 });

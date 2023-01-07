@@ -17,13 +17,21 @@ class CategoryController extends Controller
         return back()->with('message', 'New category added successfully.');
     }
 
-    public function manageCategory() {
-        //
+    public function manageCategories() {
+        return view('admin.dashboard.category.manage-category', [
+            'categories'    =>  Category::all(),
+        ]);
     }
 
     public function allCategories() {
         return view('admin.dashboard.category.all-categories', [
             'categories'    =>  Category::all(),
         ]);
+    }
+
+    public function changeCategoryStatus($id) {
+        Category::changeCategoryStatus($id);
+
+        return back()->with('message', 'Category status successfully updated.');
     }
 }

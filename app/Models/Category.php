@@ -29,6 +29,18 @@ class Category extends Model
         self::$image->move(self::$directory, self::$imageNewName);
 
         return self::$imageURL;
+    }
 
+    public static function changeCategoryStatus($id) {
+
+        self::$category = Category::find($id);;
+
+        if (self::$category->status == 0) {
+            self::$category->status = 1;
+        } else {
+            self::$category->status = 0;
+        }
+
+        self::$category->save();
     }
 }
