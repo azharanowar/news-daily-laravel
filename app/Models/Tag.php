@@ -20,4 +20,17 @@ class Tag extends Model
         self::$tag->status = $request->status;
         self::$tag->save();
     }
+
+    public static function changeTagStatus($id) {
+
+        self::$tag = Tag::find($id);;
+
+        if (self::$tag->status == 0) {
+            self::$tag->status = 1;
+        } else {
+            self::$tag->status = 0;
+        }
+
+        self::$tag->save();
+    }
 }

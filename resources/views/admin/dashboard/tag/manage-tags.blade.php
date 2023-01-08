@@ -52,7 +52,7 @@
                                     </td>
                                     <td>
                                         <div class="d-flex" style="gap: 0.30rem;">
-                                            <a href="{{ route('category.change-status', ['id' => $tag->id]) }}" class="btn btn-sm btn-secondary">{{ $tag->status == 0 ? 'Active' : 'Inactive' }}</a>
+                                            <a href="{{ route('tags.change-status', ['id' => $tag->id]) }}" class="btn btn-sm btn-secondary">{{ $tag->status == 0 ? 'Active' : 'Inactive' }}</a>
                                             <a href="{{ route('category.update', ['id' => $tag->id]) }}" class="btn btn-sm btn-success">Update</a>
                                             <form action="{{ route('category.delete', ['id' => $tag->id]) }}" method="POST">
                                                 @csrf

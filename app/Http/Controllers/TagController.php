@@ -28,12 +28,12 @@ class TagController extends Controller
         ]);
     }
 
-//    public function changeTagStatus($id) {
-//        Category::changeCategoryStatus($id);
-//
-//        return back()->with('message', 'Tag status successfully updated.');
-//    }
-//
+    public function changeTagStatus($id) {
+        Tag::changeTagStatus($id);
+
+        return back()->with('message', 'Tag status successfully updated.');
+    }
+
 //    public function updateTag($id) {
 //        return view('admin.dashboard.category.update-category', [
 //            'category'    =>  Tags::find($id),

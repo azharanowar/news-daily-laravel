@@ -50,4 +50,5 @@ Route::middleware([
     Route::post('/tags/save-tag', [TagController::class, 'saveTag'])->name('tags.save-tag');
     Route::get('/tags/manage-tag', [TagController::class, 'manageTags'])->name('tags.manage-tags');
     Route::get('/tags/all-tag', [TagController::class, 'allTags'])->name('tags.all-tags');
+    Route::get('/tags/change-status/{id}', [TagController::class, 'changeTagStatus'])->name('tags.change-status');
 });
