@@ -48,6 +48,6 @@ Route::middleware([
     // Category Routes
     Route::get('/tags/add-tag', [TagController::class, 'addTag'])->name('tags.add-tag');
     Route::post('/tags/save-tag', [TagController::class, 'saveTag'])->name('tags.save-tag');
-    Route::get('/tags/manage-tag', [TagController::class, 'addCategory'])->name('tags.manage-tags');
-    Route::get('/tags/all-tag', [TagController::class, 'addCategory'])->name('tags.all-tags');
+    Route::get('/tags/manage-tag', [TagController::class, 'manageTags'])->name('tags.manage-tags');
+    Route::get('/tags/all-tag', [TagController::class, 'allTags'])->name('tags.all-tags');
 });

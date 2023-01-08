@@ -17,18 +17,17 @@ class TagController extends Controller
         return back()->with('message', 'New tag successfully added.');
     }
 
-//    public function manageTags() {
-//        return view('admin.dashboard.tags.manage-tags', [
-//            'categories'    =>  Tags::all(),
-//        ]);
-//    }
-//
-//    public function allTags() {
-//        return view('admin.dashboard.tags.all-tags', [
-//            'categories'    =>  Tags::all(),
-//        ]);
-//    }
-//
+    public function manageTags() {
+        return view('admin.dashboard.tag.manage-tags', [
+            'tags'    =>  Tag::all(),
+        ]);
+    }
+    public function allTags() {
+        return view('admin.dashboard.tag.all-tags', [
+            'tags'    =>  Tag::all(),
+        ]);
+    }
+
 //    public function changeTagStatus($id) {
 //        Category::changeCategoryStatus($id);
 //
