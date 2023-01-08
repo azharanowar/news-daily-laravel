@@ -54,9 +54,9 @@
                                         <div class="d-flex" style="gap: 0.30rem;">
                                             <a href="{{ route('tags.change-status', ['id' => $tag->id]) }}" class="btn btn-sm btn-secondary">{{ $tag->status == 0 ? 'Active' : 'Inactive' }}</a>
                                             <a href="{{ route('tags.update', ['id' => $tag->id]) }}" class="btn btn-sm btn-success">Update</a>
-                                            <form action="{{ route('category.delete', ['id' => $tag->id]) }}" method="POST">
+                                            <form action="{{ route('tags.delete', ['id' => $tag->id]) }}" method="POST">
                                                 @csrf
-                                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are your sure to delete this category?')">Delete</button>
+                                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are your sure to delete this tag?')">Delete</button>
                                             </form>
                                         </div>
                                     </td>

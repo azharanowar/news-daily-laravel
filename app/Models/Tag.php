@@ -43,4 +43,9 @@ class Tag extends Model
         self::$tag->status = $request->status;
         self::$tag->save();
     }
+
+    public static function deleteTag($id) {
+        self::$tag = Tag::find($id);
+        self::$tag->delete();
+    }
 }

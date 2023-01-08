@@ -53,4 +53,5 @@ Route::middleware([
     Route::get('/tags/change-status/{id}', [TagController::class, 'changeTagStatus'])->name('tags.change-status');
     Route::get('/tags/update/{id}', [TagController::class, 'updateTag'])->name('tags.update');
     Route::post('/tags/save-updated-info/{id}', [TagController::class, 'saveUpdatedTagInfo'])->name('tags.save-updated-info');
+    Route::post('/tags/delete/{id}', [TagController::class, 'deleteTag'])->name('tags.delete');
 });

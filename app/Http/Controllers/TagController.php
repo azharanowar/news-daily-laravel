@@ -46,9 +46,9 @@ class TagController extends Controller
         return redirect('/tags/manage-tags')->with('message', 'Tag info successfully updated.');
     }
 
-//    public function deleteCategory(Request $request, $id) {
-//        Tags::deleteCategory($id);
-//
-//        return redirect('/category/manage-categories')->with('message', 'Category successfully deleted.');
-//    }
+    public function deleteTag(Request $request, $id) {
+        Tag::deleteTag($id);
+
+        return redirect('/tags/manage-tags')->with('message', 'Tag successfully deleted.');
+    }
 }
