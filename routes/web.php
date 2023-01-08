@@ -43,4 +43,9 @@ Route::middleware([
     Route::get('/category/update/{id}', [CategoryController::class, 'updateCategory'])->name('category.update');
     Route::post('/category/save-updated-info/{id}', [CategoryController::class, 'saveUpdatedCategoryInfo'])->name('category.save-updated-info');
     Route::post('/category/delete/{id}', [CategoryController::class, 'deleteCategory'])->name('category.delete');
+
+    // Category Routes
+    Route::get('/tags/add-tag', [CategoryController::class, 'addCategory'])->name('tags.add-tag');
+    Route::get('/tags/manage-tag', [CategoryController::class, 'addCategory'])->name('tags.manage-tags');
+    Route::get('/tags/all-tag', [CategoryController::class, 'addCategory'])->name('tags.all-tags');
 });

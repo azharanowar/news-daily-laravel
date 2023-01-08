@@ -74,7 +74,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNews"
            aria-expanded="true" aria-controls="collapsePages">
-            <i class="fas fa-fw fa-folder"></i>
+            <i class="fas fa-solid fa-globe"></i>
             <span>News</span>
         </a>
         <div id="collapseNews" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -89,7 +89,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategories"
            aria-expanded="true" aria-controls="collapseCategories">
-            <i class="fas fa-fw fa-folder"></i>
+            <i class="fas fa-solid fa-list"></i>
             <span>Categories</span>
         </a>
         <div id="collapseCategories" class="collapse" aria-labelledby="headingCategories" data-parent="#accordionSidebar">
@@ -98,6 +98,21 @@
                 <a class="collapse-item" href="{{ route('category.add-category') }}">Add Category</a>
                 <a class="collapse-item" href="{{ route('category.manage-categories') }}">Manage Categories</a>
                 <a class="collapse-item" href="{{ route('category.all-categories') }}">All Categories</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTags"
+           aria-expanded="true" aria-controls="collapseTags">
+            <i class="fas fa-solid fa-hashtag"></i>
+            <span>Tags</span>
+        </a>
+        <div id="collapseTags" class="collapse" aria-labelledby="headingCategories" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">News Tags:</h6>
+                <a class="collapse-item" href="{{ route('tags.add-tag') }}">Add Tags</a>
+                <a class="collapse-item" href="{{ route('tags.manage-tags') }}">Manage Tags</a>
+                <a class="collapse-item" href="{{ route('tags.all-tags') }}">All Tags</a>
             </div>
         </div>
     </li>
