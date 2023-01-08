@@ -31,9 +31,9 @@ Route::middleware([
 
     // News Routes
     Route::get('/news/add-news', [NewsController::class, 'addNews'])->name('news.add-news');
+    Route::post('/news/save-news', [NewsController::class, 'saveNews'])->name('news.save-news');
     Route::get('/news/manage-news', [NewsController::class, 'manageNews'])->name('news.manage-news');
     Route::get('/news/all-news', [NewsController::class, 'allNews'])->name('news.all-news');
-    Route::post('/news/save-news', [NewsController::class, 'allNews'])->name('news.save-news');// News Routes
 
     // Category Routes
     Route::get('/category/add-category', [CategoryController::class, 'addCategory'])->name('category.add-category');
