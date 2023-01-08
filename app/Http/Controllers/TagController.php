@@ -34,18 +34,18 @@ class TagController extends Controller
         return back()->with('message', 'Tag status successfully updated.');
     }
 
-//    public function updateTag($id) {
-//        return view('admin.dashboard.category.update-category', [
-//            'category'    =>  Tags::find($id),
-//        ]);
-//    }
-//
-//    public function saveUpdatedTagInfo(Request $request, $id) {
-//        Tags::saveUpdatedCategoryInfo($request, $id);
-//
-//        return redirect('/category/manage-categories')->with('message', 'Category status successfully updated.');
-//    }
-//
+    public function updateTag($id) {
+        return view('admin.dashboard.tag.update-tag', [
+            'tag'    =>  Tag::find($id),
+        ]);
+    }
+
+    public function saveUpdatedTagInfo(Request $request, $id) {
+        Tag::saveUpdatedTagInfo($request, $id);
+
+        return redirect('/tags/manage-tags')->with('message', 'Tag info successfully updated.');
+    }
+
 //    public function deleteCategory(Request $request, $id) {
 //        Tags::deleteCategory($id);
 //

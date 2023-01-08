@@ -33,4 +33,14 @@ class Tag extends Model
 
         self::$tag->save();
     }
+
+    public static function saveUpdatedTagInfo($request, $id) {
+        self::$tag = Tag::find($id);
+
+        self::$tag->name = $request->name;
+        self::$tag->slug = Str::slug($request->name);
+        self::$tag->description = $request->description;
+        self::$tag->status = $request->status;
+        self::$tag->save();
+    }
 }

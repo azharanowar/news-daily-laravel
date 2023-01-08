@@ -48,7 +48,9 @@ Route::middleware([
     // Category Routes
     Route::get('/tags/add-tag', [TagController::class, 'addTag'])->name('tags.add-tag');
     Route::post('/tags/save-tag', [TagController::class, 'saveTag'])->name('tags.save-tag');
-    Route::get('/tags/manage-tag', [TagController::class, 'manageTags'])->name('tags.manage-tags');
-    Route::get('/tags/all-tag', [TagController::class, 'allTags'])->name('tags.all-tags');
+    Route::get('/tags/manage-tags', [TagController::class, 'manageTags'])->name('tags.manage-tags');
+    Route::get('/tags/all-tags', [TagController::class, 'allTags'])->name('tags.all-tags');
     Route::get('/tags/change-status/{id}', [TagController::class, 'changeTagStatus'])->name('tags.change-status');
+    Route::get('/tags/update/{id}', [TagController::class, 'updateTag'])->name('tags.update');
+    Route::post('/tags/save-updated-info/{id}', [TagController::class, 'saveUpdatedTagInfo'])->name('tags.save-updated-info');
 });
