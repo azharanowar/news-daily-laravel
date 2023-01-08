@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TagController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,7 +46,8 @@ Route::middleware([
     Route::post('/category/delete/{id}', [CategoryController::class, 'deleteCategory'])->name('category.delete');
 
     // Category Routes
-    Route::get('/tags/add-tag', [CategoryController::class, 'addCategory'])->name('tags.add-tag');
-    Route::get('/tags/manage-tag', [CategoryController::class, 'addCategory'])->name('tags.manage-tags');
-    Route::get('/tags/all-tag', [CategoryController::class, 'addCategory'])->name('tags.all-tags');
+    Route::get('/tags/add-tag', [TagController::class, 'addTag'])->name('tags.add-tag');
+    Route::post('/tags/save-tag', [TagController::class, 'saveTag'])->name('tags.save-tag');
+    Route::get('/tags/manage-tag', [TagController::class, 'addCategory'])->name('tags.manage-tags');
+    Route::get('/tags/all-tag', [TagController::class, 'addCategory'])->name('tags.all-tags');
 });

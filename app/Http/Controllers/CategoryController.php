@@ -14,7 +14,7 @@ class CategoryController extends Controller
     public function saveCategory(Request $request) {
         Category::saveNewCategory($request);
 
-        return back()->with('message', 'New category added successfully.');
+        return back()->with('message', 'New category successfully added.');
     }
 
     public function manageCategories() {
