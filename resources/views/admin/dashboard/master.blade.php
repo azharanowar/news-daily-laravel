@@ -96,7 +96,7 @@
 
 <script>
     $('#summernote').summernote({
-        placeholder: 'Hello Summernote for Bootstrap 4',
+        placeholder: 'Full description...',
         tabsize: 2,
         height: 250
     });

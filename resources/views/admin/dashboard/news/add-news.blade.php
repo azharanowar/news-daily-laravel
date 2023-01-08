@@ -22,6 +22,35 @@
                         <label for="title" class="form-label">Title: </label>
                         <input type="text" class="form-control" id="title" name="title" placeholder="Enter news title..." required>
                     </div>
+                    <div class="mb-3 py-2">
+                        <label for="categoryId" class="form-label">Category: </label>
+                        <select class="form-select" id="categoryId" name="category_id" aria-label="Default select example" required>
+                            <option selected disabled>-- Select news category --</option>
+
+                            @foreach($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+
+                        </select>
+                        <label for="categoryId" class="form-label">Tags: </label>
+                        <select class="form-select" id="categoryId" name="tags_id" aria-label="Default select example" required>
+                            <option selected disabled>-- Select news tags --</option>
+
+                            @foreach($tags as $tag)
+                                <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                            @endforeach
+
+                        </select>
+                        <label for="authorId" class="form-label">Author: </label>
+                        <select class="form-select" id="authorId" name="author_id" aria-label="Default select example" required>
+                            <option selected disabled>-- Select news author --</option>
+
+                            @foreach($users as $user)
+                                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                            @endforeach
+
+                        </select>
+                    </div>
                     <div class="mb-3">
                         <label for="shortDescription" class="form-label">Short Description: </label>
                         <textarea class="form-control" id="shortDescription" name="short_description" rows="3" placeholder="Enter news short description..."></textarea>
