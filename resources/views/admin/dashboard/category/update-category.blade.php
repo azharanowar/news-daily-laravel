@@ -35,11 +35,11 @@
                         <label for="status" class="form-label">Publication Status: </label>
                         <div class="bg-white rounded border py-2 px-3">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="status" id="activeStatus" value="{{ $category->status }}" @if($category->status == 1) checked @endif/>
+                                <input class="form-check-input" type="radio" name="status" id="activeStatus" value="1" @if($category->status == 1) checked @endif/>
                                 <label class="form-check-label" for="activeStatus">Active</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="status" id="inactiveStatus" value="{{ $category->status }}" @if($category->status == 0) checked @endif>
+                                <input class="form-check-input" type="radio" name="status" id="inactiveStatus" value="0" @if($category->status == 0) checked @endif>
                                 <label class="form-check-label" for="inactiveStatus">Inactive</label>
                             </div>
                         </div>
