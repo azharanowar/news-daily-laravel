@@ -12,6 +12,10 @@ class CategoryController extends Controller
     }
 
     public function saveCategory(Request $request) {
+        $this->validate($request, [
+            'name'   =>  'required',
+        ]);
+
         Category::saveNewCategory($request);
 
         return back()->with('message', 'New category successfully added.');
@@ -42,6 +46,11 @@ class CategoryController extends Controller
     }
 
     public function saveUpdatedCategoryInfo(Request $request, $id) {
+        $this->validate($request, [
+            'name'   =>  'required',
+            'slug'   =>  'required|unique:categories,slug',
+        ]);
+
         Category::saveUpdatedCategoryInfo($request, $id);
 
         return redirect('/category/manage-categories')->with('message', 'Category info successfully updated.');

@@ -20,7 +20,11 @@
 
                     <div class="mb-3">
                         <label for="name" class="form-label">Name: </label>
-                        <input type="text" class="form-control" id="name" name="name" value="{{ $category->name }}" placeholder="Enter category name..." autofocus required>
+                        <input type="text" class="form-control" id="name" name="name" value="{{ $category->name }}" placeholder="Enter category name..." autofocus>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Slug: </label>
+                        <input type="text" class="form-control" id="slug" name="slug" value="{{ $category->slug }}">
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
