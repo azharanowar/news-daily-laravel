@@ -31,9 +31,7 @@ class NewsController extends Controller
            'featured_image'   =>  [
                'required',
                File::image()
-                   ->min(350)
-                   ->max(12 * 350)
-                   ->dimensions(Rule::dimensions()->maxWidth(1000)->maxHeight(500)),
+                   ->dimensions(Rule::dimensions()->maxWidth(1280)->maxHeight(700)),
            ],
         ]);
 
@@ -47,6 +45,8 @@ class NewsController extends Controller
     }
 
     public function allNews() {
-        //
+        return view('admin.dashboard.news.all-news', [
+            'news'  =>  News::all(),
+        ]);
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use App\Models\Category;
+use PharIo\Manifest\Author;
 
 class News extends Model
 {
@@ -22,8 +23,32 @@ class News extends Model
         self::$news->author_id = $request->author_id;
         self::$news->short_description = $request->short_description;
         self::$news->full_description = $request->full_description;
-        self::$news->featured_image = Category::getSavedImageURL($request, 'featured_image');
+        self::$news->featured_image = self::getSavedImageURL($request);
         self::$news->status = $request->status;
         self::$news->save();
+    }
+
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function tags() {
+        return $this->belongsTo(Tag::class);
+    }
+
+    public function author() {
+        return $this->belongsTo(User::class);
+    }
+
+    public static function getSavedImageURL($request) {
+        self::$image = $request->file('featured_image');
+        if (self::$image) {
+            self::$imageNewName = rand() . '.' . self::$image->getClientOriginalExtension();
+            self::$directory = 'admin/images/news-images/';
+            self::$imageURL = self::$directory . self::$imageNewName;
+            self::$image->move(self::$directory, self::$imageNewName);
+
+            return self::$imageURL;
+        }
     }
 }

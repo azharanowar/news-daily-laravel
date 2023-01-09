@@ -17,7 +17,7 @@ class Category extends Model
         self::$category->name = $request->name;
         self::$category->slug = Str::slug($request->name);
         self::$category->description = $request->description;
-        self::$category->image = self::getSavedImageURL($request, 'image');
+        self::$category->image = self::getSavedImageURL($request);
         self::$category->status = $request->status;
         self::$category->save();
     }
@@ -40,7 +40,7 @@ class Category extends Model
 
         if ($request->file('image')) {
             self::deleteExistingImage(self::$category->image);
-            self::$image = self::getSavedImageURL($request, 'image');
+            self::$image = self::getSavedImageURL($request);
             self::$category->image = self::$image;
         }
 
@@ -57,8 +57,8 @@ class Category extends Model
         self::$category->delete();
     }
 
-    public static function getSavedImageURL($request, $imageName) {
-        self::$image = $request->file($imageName);
+    public static function getSavedImageURL($request) {
+        self::$image = $request->file('image');
         if (self::$image) {
             self::$imageNewName = rand() . '.' . self::$image->getClientOriginalExtension();
             self::$directory = 'admin/images/category-images/';
