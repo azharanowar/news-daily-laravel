@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use Illuminate\Validation\Rule;
 
 class CategoryController extends Controller
 {
@@ -48,7 +49,9 @@ class CategoryController extends Controller
     public function saveUpdatedCategoryInfo(Request $request, $id) {
         $this->validate($request, [
             'name'   =>  'required',
-            'slug'   =>  'required|unique:categories,slug',
+            'slug'   =>  [
+                Rule::unique('categories')->ignore($id)
+            ],
         ]);
 
         Category::saveUpdatedCategoryInfo($request, $id);
