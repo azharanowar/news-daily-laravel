@@ -20,7 +20,13 @@
 
                     <div class="mb-3">
                         <label for="name" class="form-label">Name: </label>
-                        <input type="text" class="form-control" id="name" name="name" value="{{ $tag->name }}" placeholder="Enter category name..." autofocus required>
+                        <input type="text" class="form-control {{ $errors->has('name') ? 'border-danger' : '' }}" id="name" name="name" value="{{ $tag->name }}" placeholder="Enter category name..." autofocus>
+                        <span class="text-danger">{{ $errors->has('name') ? $errors->first('name') : '' }}</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="slug" class="form-label">Slug: </label>
+                        <input type="text" class="form-control {{ $errors->has('slug') ? 'border-danger' : '' }}" id="slug" name="slug" value="{{ $tag->slug }}" placeholder="https://website.com/tag/your-slug-here">
+                        <span class="text-danger">{{ $errors->has('slug') ? $errors->first('slug') : '' }}</span>
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Description</label>

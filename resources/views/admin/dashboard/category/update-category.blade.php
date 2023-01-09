@@ -34,7 +34,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="image" class="form-label">Category Image: </label>
-                        <img src="{{ asset($category->image) }}" class="img-fluid" style="width: 120px;" title="Old category image."/>
+                        <img src="{{ asset($category->image) }}" class="img-fluid m-2" style="width: 120px;" title="Old category image."/>
                         <input type="file" class="form-control" id="image" style="height: auto;" name="image" accept="image/*">
                     </div>
                     <div class="mb-3">
