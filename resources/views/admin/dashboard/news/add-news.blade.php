@@ -20,11 +20,12 @@
 
                     <div class="mb-3">
                         <label for="title" class="form-label">Title: </label>
-                        <input type="text" class="form-control" id="title" name="title" placeholder="Enter news title..." required>
+                        <input type="text" class="form-control {{ $errors->has('title') ? 'border-danger' : '' }}" id="title" name="title" placeholder="Enter news title...">
+                        <span class="text-danger">{{ $errors->has('title') ? $errors->first('title') : '' }}</span>
                     </div>
                     <div class="mb-3 py-2">
                         <label for="categoryId" class="form-label">Category: </label>
-                        <select class="form-select" id="categoryId" name="category_id" aria-label="Default select example" required>
+                        <select class="form-select {{ $errors->has('category_id') ? 'border-danger' : '' }}" id="categoryId" name="category_id" aria-label="Default select example">
                             <option selected disabled>-- Select news category --</option>
 
                             @foreach($categories as $category)
@@ -32,8 +33,10 @@
                             @endforeach
 
                         </select>
+                        <span class="text-danger">{!! $errors->has('category_id') ? $errors->first('category_id') . '<br>' : '' !!}</span>
+
                         <label for="categoryId" class="form-label">Tags: </label>
-                        <select class="form-select" id="categoryId" name="tags_id" aria-label="Default select example" required>
+                        <select class="form-select {{ $errors->has('tags_id') ? 'border-danger' : '' }}" id="categoryId" name="tags_id" aria-label="Default select example">
                             <option selected disabled>-- Select news tags --</option>
 
                             @foreach($tags as $tag)
@@ -41,8 +44,10 @@
                             @endforeach
 
                         </select>
+                        <span class="text-danger">{!! $errors->has('tags_id') ? $errors->first('tags_id') . '<br>' : '' !!}</span>
+
                         <label for="authorId" class="form-label">Author: </label>
-                        <select class="form-select" id="authorId" name="author_id" aria-label="Default select example" required>
+                        <select class="form-select {{ $errors->has('author_id') ? 'border-danger' : '' }}" id="authorId" name="author_id" aria-label="Default select example">
                             <option selected disabled>-- Select news author --</option>
 
                             @foreach($users as $user)
@@ -50,6 +55,8 @@
                             @endforeach
 
                         </select>
+                        <span class="text-danger">{!! $errors->has('author_id') ? $errors->first('author_id') . '<br>' : '' !!}</span>
+
                     </div>
                     <div class="mb-3">
                         <label for="shortDescription" class="form-label">Short Description: </label>
@@ -57,11 +64,13 @@
                     </div>
                     <div class="mb-3">
                         <label for="fullDescription" class="form-label">Full Description: </label>
-                        <textarea class="form-control" id="summernote" name="full_description" rows="10" placeholder="News full description..."></textarea>
+                        <textarea class="form-control {{ $errors->has('full_description') ? 'border-danger' : '' }}" id="summernote" name="full_description" rows="10" placeholder="News full description..."></textarea>
+                        <span class="text-danger">{{ $errors->has('full_description') ? $errors->first('full_description') : '' }}</span>
                     </div>
                     <div class="mb-3">
                         <label for="image" class="form-label">Featured Image: </label>
-                        <input type="file" class="form-control" id="featuredImage" name="featured_image" style="height: auto;" accept="image/*">
+                        <input type="file" class="form-control {{ $errors->has('featured_image') ? 'border-danger' : '' }}" id="featuredImage" name="featured_image" style="height: auto;" accept="image/*">
+                        <span class="text-danger">{{ $errors->has('featured_image') ? $errors->first('featured_image') : '' }}</span>
                     </div>
                     <div class="mb-3">
                         <label for="status" class="form-label">Publication Status: </label>
