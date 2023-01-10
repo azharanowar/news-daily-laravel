@@ -93,6 +93,37 @@
                     </div>
 
                     <div class="mb-3">
+                        <label for="" class="form-label">Display: </label>
+                        <div class="bg-white rounded border py-2 px-3">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="display_popular" id="displayPopular" value="1" {{ $single_news->display_popular == 1 ? 'checked' : '' }}>
+                                <label class="form-check-label" for="displayPopular">Popular</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="display_trending" id="displayTrending" value="1" {{ $single_news->display_trending == 1 ? 'checked' : '' }}>
+                                <label class="form-check-label" for="displayTrending">Trending</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="display_breaking" id="displayBreaking" value="1" {{ $single_news->display_breaking == 1 ? 'checked' : '' }}>
+                                <label class="form-check-label" for="displayBreaking">Breaking News</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="status" class="form-label">Comment Box: </label>
+                        <div class="bg-white rounded border py-2 px-3">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="comment" id="commentEnable" value="1" {{ $single_news->comment == 1 ? 'checked' : '' }}>
+                                <label class="form-check-label" for="commentEnable">Enable</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="comment" id="commentDisable" value="0" {{ $single_news->comment == 0 ? 'checked' : '' }}>
+                                <label class="form-check-label" for="commentDisable">Disable</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
                         <button type="submit" class="btn btn-success">Save Category</button>
                     </div>
 
