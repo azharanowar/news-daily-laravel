@@ -21,6 +21,7 @@ use App\Http\Controllers\HomeController;
 
 // Frontend routes.
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/category/{slug}', [HomeController::class, 'categoryArchive'])->name('category.index');
 
 // Backend routes.
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'
