@@ -37,7 +37,7 @@ class NewsController extends Controller
 
         News::saveNewNews($request);
 
-        return redirect('/news/add-news')->with('message', 'New news successfully added.');
+        return redirect('/dashboard/news/add-news')->with('message', 'New news successfully added.');
     }
 
     public function allNews() {
@@ -87,7 +87,7 @@ class NewsController extends Controller
 
         News::saveUpdatedCategoryInfo($request, $id);
 
-        return redirect('/news/manage-news')->with('message', 'News info successfully updated.');
+        return redirect('/dashboard/news/manage-news')->with('message', 'News info successfully updated.');
     }
 
     public function isUpdateFeaturedImageRequired($id) {

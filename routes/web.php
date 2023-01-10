@@ -30,31 +30,31 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // News Routes
-    Route::get('/news/add-news', [NewsController::class, 'addNews'])->name('news.add-news');
-    Route::post('/news/save-news', [NewsController::class, 'saveNews'])->name('news.save-news');
-    Route::get('/news/all-news', [NewsController::class, 'allNews'])->name('news.all-news');
-    Route::get('/news/manage-news', [NewsController::class, 'manageNews'])->name('news.manage-news');
-    Route::get('/news/change-status/{id}', [NewsController::class, 'changeNewsStatus'])->name('news.change-status');
-    Route::get('/news/update/{id}', [NewsController::class, 'updateNews'])->name('news.update');
-    Route::post('/news/save-updated-news-info/{id}', [NewsController::class, 'saveUpdatedNewsInfo'])->name('news.save-updated-news-info');
+    Route::get('/dashboard/news/add-news', [NewsController::class, 'addNews'])->name('news.add-news');
+    Route::post('/dashboard/news/save-news', [NewsController::class, 'saveNews'])->name('news.save-news');
+    Route::get('/dashboard/news/all-news', [NewsController::class, 'allNews'])->name('news.all-news');
+    Route::get('/dashboard/news/manage-news', [NewsController::class, 'manageNews'])->name('news.manage-news');
+    Route::get('/dashboard/news/change-status/{id}', [NewsController::class, 'changeNewsStatus'])->name('news.change-status');
+    Route::get('/dashboard/news/update/{id}', [NewsController::class, 'updateNews'])->name('news.update');
+    Route::post('/dashboard/news/save-updated-news-info/{id}', [NewsController::class, 'saveUpdatedNewsInfo'])->name('news.save-updated-news-info');
 
     // Category Routes
-    Route::get('/category/add-category', [CategoryController::class, 'addCategory'])->name('category.add-category');
-    Route::post('/category/save-category', [CategoryController::class, 'saveCategory'])->name('category.save-category');
-    Route::get('/category/all-categories', [CategoryController::class, 'allCategories'])->name('category.all-categories');
-    Route::get('/category/manage-categories', [CategoryController::class, 'manageCategories'])->name('category.manage-categories');
-    Route::get('/category/change-status/{id}', [CategoryController::class, 'changeCategoryStatus'])->name('category.change-status');
-    Route::get('/category/update/{id}', [CategoryController::class, 'updateCategory'])->name('category.update');
-    Route::post('/category/save-updated-info/{id}', [CategoryController::class, 'saveUpdatedCategoryInfo'])->name('category.save-updated-info');
-    Route::post('/category/delete/{id}', [CategoryController::class, 'deleteCategory'])->name('category.delete');
+    Route::get('/dashboard/category/add-category', [CategoryController::class, 'addCategory'])->name('category.add-category');
+    Route::post('/dashboard/category/save-category', [CategoryController::class, 'saveCategory'])->name('category.save-category');
+    Route::get('/dashboard/category/all-categories', [CategoryController::class, 'allCategories'])->name('category.all-categories');
+    Route::get('/dashboard/category/manage-categories', [CategoryController::class, 'manageCategories'])->name('category.manage-categories');
+    Route::get('/dashboard/category/change-status/{id}', [CategoryController::class, 'changeCategoryStatus'])->name('category.change-status');
+    Route::get('/dashboard/category/update/{id}', [CategoryController::class, 'updateCategory'])->name('category.update');
+    Route::post('/dashboard/category/save-updated-info/{id}', [CategoryController::class, 'saveUpdatedCategoryInfo'])->name('category.save-updated-info');
+    Route::post('/dashboard/category/delete/{id}', [CategoryController::class, 'deleteCategory'])->name('category.delete');
 
     // Category Routes
-    Route::get('/tags/add-tag', [TagController::class, 'addTag'])->name('tags.add-tag');
-    Route::post('/tags/save-tag', [TagController::class, 'saveTag'])->name('tags.save-tag');
-    Route::get('/tags/manage-tags', [TagController::class, 'manageTags'])->name('tags.manage-tags');
-    Route::get('/tags/all-tags', [TagController::class, 'allTags'])->name('tags.all-tags');
-    Route::get('/tags/change-status/{id}', [TagController::class, 'changeTagStatus'])->name('tags.change-status');
-    Route::get('/tags/update/{id}', [TagController::class, 'updateTag'])->name('tags.update');
-    Route::post('/tags/save-updated-info/{id}', [TagController::class, 'saveUpdatedTagInfo'])->name('tags.save-updated-info');
-    Route::post('/tags/delete/{id}', [TagController::class, 'deleteTag'])->name('tags.delete');
+    Route::get('/dashboard/tags/add-tag', [TagController::class, 'addTag'])->name('tags.add-tag');
+    Route::post('/dashboard/tags/save-tag', [TagController::class, 'saveTag'])->name('tags.save-tag');
+    Route::get('/dashboard/tags/manage-tags', [TagController::class, 'manageTags'])->name('tags.manage-tags');
+    Route::get('/dashboard/tags/all-tags', [TagController::class, 'allTags'])->name('tags.all-tags');
+    Route::get('/dashboard/tags/change-status/{id}', [TagController::class, 'changeTagStatus'])->name('tags.change-status');
+    Route::get('/dashboard/tags/update/{id}', [TagController::class, 'updateTag'])->name('tags.update');
+    Route::post('/dashboard/tags/save-updated-info/{id}', [TagController::class, 'saveUpdatedTagInfo'])->name('tags.save-updated-info');
+    Route::post('/dashboard/tags/delete/{id}', [TagController::class, 'deleteTag'])->name('tags.delete');
 });
