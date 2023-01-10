@@ -24,6 +24,10 @@ return new class extends Migration
             $table->longText('full_description');
             $table->text('featured_image');
             $table->tinyInteger('status')->default(0);
+            $table->tinyInteger('display_popular')->default(0);
+            $table->tinyInteger('display_trending')->default(0);
+            $table->tinyInteger('display_breaking')->default(0);
+            $table->tinyInteger('comment')->default(1);
             $table->timestamps();
         });
     }

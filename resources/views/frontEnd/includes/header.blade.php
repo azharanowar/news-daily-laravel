@@ -10,7 +10,7 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a href="">All News</a></li>
-                <li><a href="single-post.html">Breaking News</a></li>
+                <li><a href="">Breaking News</a></li>
                 <li class="dropdown"><a href=""><span>Categories</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>
                         @foreach($categories as $category)
