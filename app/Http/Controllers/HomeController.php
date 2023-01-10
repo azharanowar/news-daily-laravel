@@ -18,8 +18,8 @@ class HomeController extends Controller
         $this->category = Category::where('slug', $slug)->first();
 
         return view('frontEnd.category.index', [
-            'category'  =>  $this->category,
-            'news'      =>  News::where('category_id', $this->category->id)->where('status', 1)->get(),
+            'category'          =>  $this->category,
+            'news'              =>  News::where('category_id', $this->category->id)->where('status', 1)->get(),
         ]);
     }
 
@@ -27,8 +27,8 @@ class HomeController extends Controller
         $this->tag = Tag::where('slug', $slug)->first();
 
         return view('frontEnd.tag.index', [
-            'tag'       =>  $this->tag,
-            'news'      =>  News::where('tags_id', $this->tag->id)->where('status', 1)->get(),
+            'tag'               =>  $this->tag,
+            'news'              =>  News::where('tags_id', $this->tag->id)->where('status', 1)->get(),
         ]);
     }
 }
