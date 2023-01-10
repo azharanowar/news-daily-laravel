@@ -21,6 +21,7 @@ use App\Http\Controllers\HomeController;
 
 // Frontend routes.
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/breaking-news', [HomeController::class, 'breakingNews'])->name('news.breaking-news');
 
 // Category routes.
 Route::get('/category/{slug}', [HomeController::class, 'categoryArchive'])->name('category.index');

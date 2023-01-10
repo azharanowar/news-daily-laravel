@@ -31,4 +31,8 @@ class HomeController extends Controller
             'news'              =>  News::where('tags_id', $this->tag->id)->where('status', 1)->get(),
         ]);
     }
+
+    public function breakingNews() {
+        return view('frontEnd.pages.breaking-news');
+    }
 }
