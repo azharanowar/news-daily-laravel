@@ -18,7 +18,7 @@ class HomeController extends Controller
 
         return view('frontEnd.category.index', [
             'category'  =>  $this->category,
-            'news'      =>  News::where('category_id', $this->category->id),
+            'news'      =>  News::where('category_id', $this->category->id)->where('status', 1)->get(),
         ]);
     }
 }
