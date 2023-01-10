@@ -1,7 +1,7 @@
 @extends('frontEnd.master')
 
 @section('title')
-    {{ $category->name }} - Category
+    {{ $tag->name }} - Tags
 @endsection
 
 @section('main-content')
@@ -10,7 +10,7 @@
             <div class="row">
 
                 <div class="col-md-9" data-aos="fade-up">
-                    <h3 class="category-title">Category: {{ $category->name }}</h3>
+                    <h3 class="category-title">Tag: {{ $tag->name }}</h3>
 
                     @foreach($news as $item)
                         <div class="d-md-flex post-entry-2 half">

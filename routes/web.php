@@ -21,7 +21,12 @@ use App\Http\Controllers\HomeController;
 
 // Frontend routes.
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
+
+// Category routes.
 Route::get('/category/{slug}', [HomeController::class, 'categoryArchive'])->name('category.index');
+
+// Tag routes
+Route::get('/tag/{slug}', [HomeController::class, 'tagArchive'])->name('tag.index');
 
 // Backend routes.
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'
