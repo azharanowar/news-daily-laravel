@@ -28,6 +28,18 @@ class News extends Model
         self::$news->save();
     }
 
+    public static function changeNewsStatus($id) {
+        self::$news = News::find($id);
+
+        if (self::$news->status == 0) {
+            self::$news->status = 1;
+        } else {
+            self::$news->status = 0;
+        }
+
+        self::$news->save();
+    }
+
     public function category() {
         return $this->belongsTo(Category::class);
     }

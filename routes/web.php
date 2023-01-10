@@ -21,10 +21,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'
 ])->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -32,8 +29,9 @@ Route::middleware([
     // News Routes
     Route::get('/news/add-news', [NewsController::class, 'addNews'])->name('news.add-news');
     Route::post('/news/save-news', [NewsController::class, 'saveNews'])->name('news.save-news');
-    Route::get('/news/manage-news', [NewsController::class, 'manageNews'])->name('news.manage-news');
     Route::get('/news/all-news', [NewsController::class, 'allNews'])->name('news.all-news');
+    Route::get('/news/manage-news', [NewsController::class, 'manageNews'])->name('news.manage-news');
+    Route::get('/news/change-status/{id}', [NewsController::class, 'changeNewsStatus'])->name('news.change-status');
 
     // Category Routes
     Route::get('/category/add-category', [CategoryController::class, 'addCategory'])->name('category.add-category');

@@ -40,13 +40,21 @@ class NewsController extends Controller
         return redirect('/news/add-news')->with('message', 'New news successfully added.');
     }
 
-    public function manageNews() {
-        //
-    }
-
     public function allNews() {
         return view('admin.dashboard.news.all-news', [
             'news'  =>  News::all(),
         ]);
+    }
+
+    public function manageNews() {
+        return view('admin.dashboard.news.manage-news', [
+            'news'  =>  News::all(),
+        ]);
+    }
+
+    public function changeNewsStatus($id) {
+        News::changeNewsStatus($id);
+
+        return back()->with('message', 'News status successfully changed.');
     }
 }
