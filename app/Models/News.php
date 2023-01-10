@@ -40,6 +40,26 @@ class News extends Model
         self::$news->save();
     }
 
+    public static function saveUpdatedCategoryInfo($request, $id) {
+        self::$news = News::find($id);
+
+        if ($request->file('featured_image')) {
+            self::deleteExistingImage(self::$news->featured_image);
+            self::$image = self::getSavedImageURL($request);
+            self::$news->featured_image = self::$image;
+        }
+
+        self::$news->title = $request->title;
+        self::$news->slug = isset($request->slug) ? Str::slug($request->slug) : Str::slug($request->title);
+        self::$news->category_id = $request->category_id;
+        self::$news->tags_id = $request->tags_id;
+        self::$news->author_id = $request->author_id;
+        self::$news->short_description = $request->short_description;
+        self::$news->full_description = $request->full_description;
+        self::$news->status = $request->status;
+        self::$news->save();
+    }
+
     public function category() {
         return $this->belongsTo(Category::class);
     }
@@ -61,6 +81,12 @@ class News extends Model
             self::$image->move(self::$directory, self::$imageNewName);
 
             return self::$imageURL;
+        }
+    }
+
+    public static function deleteExistingImage($image) {
+        if (file_exists($image)) {
+            unlink($image);
         }
     }
 }

@@ -14,8 +14,8 @@ class NewsController extends Controller
 {
     public function addNews() {
         return view('admin.dashboard.news.add-news', [
-            'categories'    =>  Category::all(),
-            'tags'          =>  Tag::all(),
+            'categories'    =>  Category::where('status', 1)->get(),
+            'tags'          =>  Tag::where('status', 1)->get(),
             'users'         =>  User::all(),
         ]);
     }
@@ -56,5 +56,46 @@ class NewsController extends Controller
         News::changeNewsStatus($id);
 
         return back()->with('message', 'News status successfully changed.');
+    }
+
+    public function updateNews($id) {
+        return view('admin.dashboard.news.update-news', [
+            'single_news'   =>  News::find($id),
+            'categories'    =>  Category::where('status', 1)->get(),
+            'tags'          =>  Tag::where('status', 1)->get(),
+            'users'         =>  User::all(),
+        ]);
+    }
+
+    public function saveUpdatedNewsInfo(Request $request, $id) {
+
+        $this->validate($request, [
+           'title'      =>  'required',
+           'slug'       =>  [
+               Rule::unique('news')->ignore($id)
+           ],
+           'category_id'        =>  'required',
+           'tags_id'            =>  'required',
+           'author_id'          =>  'required',
+           'full_description'   =>  'required',
+           'featured_image'     =>  [
+               $this->isUpdateFeaturedImageRequired($id),
+               File::image()
+                   ->dimensions(Rule::dimensions()->maxWidth(1280)->maxHeight(700)),
+           ]
+        ]);
+
+        News::saveUpdatedCategoryInfo($request, $id);
+
+        return redirect('/news/manage-news')->with('message', 'News info successfully updated.');
+    }
+
+    public function isUpdateFeaturedImageRequired($id) {
+        $news = News::find($id);
+        if ( ! file_exists($news->featured_image )) {
+            return 'required';
+        } else {
+            return '';
+        }
     }
 }

@@ -45,7 +45,7 @@ class Category extends Model
         }
 
         self::$category->name = $request->name;
-        self::$category->slug = isset($request->slug) ? $request->slug : Str::slug($request->name);
+        self::$category->slug = isset($request->slug) ? Str::slug($request->slug) : Str::slug($request->name);
         self::$category->description = $request->description;
         self::$category->status = $request->status;
         self::$category->save();

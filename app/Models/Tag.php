@@ -38,7 +38,7 @@ class Tag extends Model
         self::$tag = Tag::find($id);
 
         self::$tag->name = $request->name;
-        self::$tag->slug = isset($request->slug) ? $request->slug : Str::slug($request->name);
+        self::$tag->slug = isset($request->slug) ? Str::slug($request->slug) : Str::slug($request->name);
         self::$tag->description = $request->description;
         self::$tag->status = $request->status;
         self::$tag->save();
