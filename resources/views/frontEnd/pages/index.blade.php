@@ -17,9 +17,9 @@
                 <div class="col-lg-4">
 
                     <div class="post-entry-1 lg">
-                        <a href="single-post.html"><img src="{{ $breaking_news[0]->featured_image }}" alt="{{ $breaking_news[0]->title }}" class="img-fluid"></a>
+                        <a href="{{ route('news.details', ['slug' => $breaking_news[0]->slug]) }}"><img src="{{ $breaking_news[0]->featured_image }}" alt="{{ $breaking_news[0]->title }}" class="img-fluid"></a>
                         <div class="post-meta"><a href="{{ route('category.index', ['slug' => $breaking_news[0]->category->slug]) }}" style="color: rgba(var(--color-black-rgb), 0.4)"><span class="date">{{ $breaking_news[0]->category->name }}</span></a> <span class="mx-1">&bullet;</span> <span>{{ $breaking_news[0]->created_at->format('d-M-Y') }}</span></div>
-                        <h2><a href="single-post.html">{{ $breaking_news[0]->title }}</a></h2>
+                        <h2><a href="{{ route('news.details', ['slug' => $breaking_news[0]->slug]) }}">{{ $breaking_news[0]->title }}</a></h2>
                         <p class="mb-4 d-block">{{ $breaking_news[0]->short_description }}</p>
 
                         <div class="d-flex align-items-center author">
@@ -40,9 +40,9 @@
                                     @php continue; @endphp
                                 @endif
                                 <div class="post-entry-1">
-                                    <a href="single-post.html"><img src="{{ $item->featured_image }}" alt="" class="img-fluid"></a>
+                                    <a href="{{ route('news.details', ['slug' => $item->slug]) }}"><img src="{{ $item->featured_image }}" alt="" class="img-fluid"></a>
                                     <div class="post-meta"><a href="{{ route('category.index', ['slug' => $item->category->slug]) }}" style="color: rgba(var(--color-black-rgb), 0.4)"><span class="date">{{ $item->category->name }}</span></a> <span class="mx-1">&bullet;</span> <span>{{ $item->created_at->format('d-M-Y') }}</span></div>
-                                    <h2><a href="single-post.html">{{ $item->title }}</a></h2>
+                                    <h2><a href="{{ route('news.details', ['slug' => $item->slug]) }}">{{ $item->title }}</a></h2>
                                 </div>
                                 @php
                                     if ($key == 3) {
@@ -64,7 +64,7 @@
                                     @php $count = 1; @endphp
                                     @foreach($trending_news as $item)
                                         <li>
-                                            <a href="single-post.html">
+                                            <a href="{{ route('news.details', ['slug' => $item->slug]) }}">
                                                 <span class="number">{{ $count }}</span>
                                                 <h3>{{ $item->title }}</h3>
                                                 <span class="author">{{ $item->author->name }}</span>
@@ -105,9 +105,9 @@
                 <div class="row g-5">
                     <div class="col-lg-4">
                         <div class="post-entry-1 lg">
-                            <a href="single-post.html"><img src="{{ $home_category->news[0]->featured_image }}" alt="{{ $home_category->news[0]->title }}" class="img-fluid"></a>
+                            <a href="{{ route('news.details', ['slug' => $item->slug]) }}"><img src="{{ $home_category->news[0]->featured_image }}" alt="{{ $home_category->news[0]->title }}" class="img-fluid"></a>
                             <div class="post-meta"><span class="date">{{ $home_category->name }}</span> <span class="mx-1">&bullet;</span> <span>{{ $home_category->news[0]->created_at->format('d-M-Y') }}</span></div>
-                            <h2><a href="single-post.html">{{ $home_category->news[0]->title }}</a></h2>
+                            <h2><a href="{{ route('news.details', ['slug' => $item->slug]) }}">{{ $home_category->news[0]->title }}</a></h2>
                             <p class="mb-4 d-block">{{ $home_category->news[0]->short_description }}</p>
 
                             <div class="d-flex align-items-center author">
@@ -120,13 +120,13 @@
 
                         <div class="post-entry-1 border-bottom">
                             <div class="post-meta"><span class="date">{{ $home_category->name }}</span> <span class="mx-1">&bullet;</span> <span>{{ $home_category->news[1]->created_at->format('d-M-Y') }}</span></div>
-                            <h2 class="mb-2"><a href="single-post.html">{{ $home_category->news[1]->title }}</a></h2>
+                            <h2 class="mb-2"><a href="{{ route('news.details', ['slug' => $item->slug]) }}">{{ $home_category->news[1]->title }}</a></h2>
                             <span class="author mb-3 d-block">{{ $home_category->news[1]->author->name }}</span>
                         </div>
 
                         <div class="post-entry-1">
                             <div class="post-meta"><span class="date">{{ $home_category->name }}</span> <span class="mx-1">&bullet;</span> <span>{{ $home_category->news[2]->created_at->format('d-M-Y') }}</span></div>
-                            <h2 class="mb-2"><a href="single-post.html">{{ $home_category->news[2]->title }}</a></h2>
+                            <h2 class="mb-2"><a href="{{ route('news.details', ['slug' => $item->slug]) }}">{{ $home_category->news[2]->title }}</a></h2>
                             <span class="author mb-3 d-block">{{ $home_category->news[2]->author->name }}</span>
                         </div>
 
@@ -140,9 +140,9 @@
                                         @php continue; @endphp
                                     @endif
                                     <div class="post-entry-1">
-                                        <a href="single-post.html"><img src="{{ $item->featured_image }}" alt="" class="img-fluid"></a>
+                                        <a href="{{ route('news.details', ['slug' => $item->slug]) }}"><img src="{{ $item->featured_image }}" alt="" class="img-fluid"></a>
                                         <div class="post-meta"><a href="{{ route('category.index', ['slug' => $item->category->slug]) }}" style="color: rgba(var(--color-black-rgb), 0.4)"><span class="date">{{ $item->category->name }}</span></a> <span class="mx-1">&bullet;</span> <span>{{ $item->created_at->format('d-M-Y') }}</span></div>
-                                        <h2><a href="single-post.html">{{ $item->title }}</a></h2>
+                                        <h2><a href="{{ route('news.details', ['slug' => $item->slug]) }}">{{ $item->title }}</a></h2>
                                     </div>
                                     @php
                                         if ($key == 3) {
@@ -163,7 +163,7 @@
                                     @endphp
                                     <div class="post-entry-1 border-bottom">
                                         <div class="post-meta"><span class="date">{{ $item->category->name }}</span> <span class="mx-1">&bullet;</span> <span>{{ $item->created_at->format('d-M-Y') }}</span></div>
-                                        <h2 class="mb-2"><a href="single-post.html">{{ $item->title }}</a></h2>
+                                        <h2 class="mb-2"><a href="{{ route('news.details', ['slug' => $item->slug]) }}">{{ $item->title }}</a></h2>
                                         <span class="author mb-3 d-block">{{ $item->author->name }}</span>
                                     </div>
                                 @endforeach

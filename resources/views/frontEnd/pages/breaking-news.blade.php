@@ -18,12 +18,12 @@
 
                     @foreach($breaking_news as $item)
                         <div class="d-md-flex post-entry-2 half">
-                            <a href="" class="me-4 thumbnail">
+                            <a href="{{ route('news.details', ['slug' => $item->slug]) }}" class="me-4 thumbnail">
                                 <img src="{{ asset($item->featured_image) }}" alt="{{ $item->title }}" class="img-fluid">
                             </a>
                             <div>
                                 <div class="post-meta"><span class="date">{{ $item->category->name }}</span> <span class="mx-1">&bullet;</span> <span>{{ $item->created_at->format('d-M-Y') }}</span></div>
-                                <h3><a href="">{{ $item->title }}</a></h3>
+                                <h3><a href="{{ route('news.details', ['slug' => $item->slug]) }}">{{ $item->title }}</a></h3>
                                 <p>{{ $item->short_description }}</p>
                                 <div class="d-flex align-items-center author">
                                     <div class="photo"><img src="{{ asset('frontEnd') }}/assets/img/person-2.jpg" alt="" class="img-fluid"></div>

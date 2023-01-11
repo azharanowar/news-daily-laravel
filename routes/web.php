@@ -23,6 +23,7 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/breaking-news', [HomeController::class, 'breakingNews'])->name('news.breaking-news');
 Route::get('/all-news', [HomeController::class, 'allNews'])->name('news.all');
+Route::get('/news/{slug}', [HomeController::class, 'newsDetails'])->name('news.details');
 
 // Category routes.
 Route::get('/category/{slug}', [HomeController::class, 'categoryArchive'])->name('category.index');

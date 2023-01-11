@@ -6,7 +6,7 @@
                     <div class="swiper-wrapper">
                         @foreach($slider_news as $item)
                             <div class="swiper-slide">
-                                <a href="" class="img-bg d-flex align-items-end justify-content-center" style="background-image: url('{{ asset($item->featured_image) }}');">
+                                <a href="{{ route('news.details', ['slug' => $item->slug]) }}" class="img-bg d-flex align-items-end justify-content-center" style="background-image: url('{{ asset($item->featured_image) }}');">
                                     <div class="img-bg-inner text-center">
                                         <h2>{{ $item->title }}</h2>
                                         <p>{{ $item->short_description }}</p>

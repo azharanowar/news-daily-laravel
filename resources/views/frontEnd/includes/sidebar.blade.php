@@ -19,7 +19,7 @@
             @foreach($breaking_news as $key => $item)
                 <div class="post-entry-1 border-bottom">
                     <div class="post-meta"><a href="{{ route('category.index', ['slug' => $item->category->slug]) }}" style="color: rgba(var(--color-black-rgb), 0.4)"><span class="date">{{ $item->category->name }}</span></a> <span class="mx-1">&bullet;</span> <span>{{ $item->created_at->format('d-M-Y') }}</span></div>
-                    <h2 class="mb-2"><a href="#">{{ $item->title }}</a></h2>
+                    <h2 class="mb-2"><a href="{{ route('news.details', ['slug' => $item->slug]) }}">{{ $item->title }}</a></h2>
                     <span class="author mb-3 d-block">{{ $item->author->name }}</span>
                 </div>
 
@@ -38,7 +38,7 @@
             @foreach($popular_news as $key => $item)
                 <div class="post-entry-1 border-bottom">
                     <div class="post-meta"><a href="{{ route('category.index', ['slug' => $item->category->slug]) }}" style="color: rgba(var(--color-black-rgb), 0.4)"><span class="date">{{ $item->category->name }}</span></a> <span class="mx-1">&bullet;</span> <span>{{ $item->created_at->format('d-M-Y') }}</span></div>
-                    <h2 class="mb-2"><a href="#">{{ $item->title }}</a></h2>
+                    <h2 class="mb-2"><a href="{{ route('news.details', ['slug' => $item->slug]) }}">{{ $item->title }}</a></h2>
                     <span class="author mb-3 d-block">{{ $item->author->name }}</span>
                 </div>
 
@@ -57,7 +57,7 @@
             @foreach($trending_news as $key => $item)
                 <div class="post-entry-1 border-bottom">
                     <div class="post-meta"><a href="{{ route('category.index', ['slug' => $item->category->slug]) }}" style="color: rgba(var(--color-black-rgb), 0.4)"><span class="date">{{ $item->category->name }}</span></a> <span class="mx-1">&bullet;</span> <span>{{ $item->created_at->format('d-M-Y') }}</span></div>
-                    <h2 class="mb-2"><a href="#">{{ $item->title }}</a></h2>
+                    <h2 class="mb-2"><a href="{{ route('news.details', ['slug' => $item->slug]) }}">{{ $item->title }}</a></h2>
                     <span class="author mb-3 d-block">{{ $item->author->name }}</span>
                 </div>
 

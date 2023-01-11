@@ -37,7 +37,7 @@
                         @foreach($breaking_news as $item)
 
                             <li>
-                                <a href="single-post.html" class="d-flex align-items-center">
+                                <a href="{{ route('news.details', ['slug' => $item->slug]) }}" class="d-flex align-items-center">
                                     <img src="{{ asset($item->featured_image) }}" alt="" class="img-fluid me-3">
                                     <div>
                                         <div class="post-meta d-block"><span class="date">{{ $item->category->name }}</span> <span class="mx-1">&bullet;</span> <span>{{ $item->created_at->format('d-M-Y') }}</span></div>
