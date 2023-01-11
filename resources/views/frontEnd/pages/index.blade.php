@@ -6,36 +6,8 @@
 
 @section('main-content')
     <!-- ======= Hero Slider Section ======= -->
-    <section id="hero-slider" class="hero-slider pt-0">
-        <div class="" data-aos="fade-in">
-            <div class="row">
-                <div class="col-12">
-                    <div class="swiper sliderFeaturedPosts">
-                        <div class="swiper-wrapper">
-                            @foreach($slider_news as $item)
-                                <div class="swiper-slide">
-                                <a href="" class="img-bg d-flex align-items-end justify-content-center" style="background-image: url('{{ asset($item->featured_image) }}');">
-                                    <div class="img-bg-inner text-center">
-                                        <h2>{{ $item->title }}</h2>
-                                        <p>{{ $item->short_description }}</p>
-                                    </div>
-                                </a>
-                            </div>
-                            @endforeach
-                        </div>
-                        <div class="custom-swiper-button-next">
-                            <span class="bi-chevron-right"></span>
-                        </div>
-                        <div class="custom-swiper-button-prev">
-                            <span class="bi-chevron-left"></span>
-                        </div>
-
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section><!-- End Hero Slider Section -->
+        @include('frontEnd.includes.slider')
+    <!-- End Hero Slider Section -->
 
     <!-- ======= Post Grid Section ======= -->
     <section id="posts" class="posts">
@@ -96,50 +68,34 @@
                         </div>
 
                         <!-- Trending Section -->
-                        <div class="col-lg-4">
+                            <div class="col-lg-4">
 
                             <div class="trending">
                                 <h3>Trending</h3>
                                 <ul class="trending-post">
-                                    <li>
-                                        <a href="single-post.html">
-                                            <span class="number">1</span>
-                                            <h3>The Best Homemade Masks for Face (keep the Pimples Away)</h3>
-                                            <span class="author">Jane Cooper</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="single-post.html">
-                                            <span class="number">2</span>
-                                            <h3>17 Pictures of Medium Length Hair in Layers That Will Inspire Your New Haircut</h3>
-                                            <span class="author">Wade Warren</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="single-post.html">
-                                            <span class="number">3</span>
-                                            <h3>13 Amazing Poems from Shel Silverstein with Valuable Life Lessons</h3>
-                                            <span class="author">Esther Howard</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="single-post.html">
-                                            <span class="number">4</span>
-                                            <h3>9 Half-up/half-down Hairstyles for Long and Medium Hair</h3>
-                                            <span class="author">Cameron Williamson</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="single-post.html">
-                                            <span class="number">5</span>
-                                            <h3>Life Insurance And Pregnancy: A Working Mom’s Guide</h3>
-                                            <span class="author">Jenny Wilson</span>
-                                        </a>
-                                    </li>
+                                    @php $count = 1; @endphp
+                                    @foreach($trending_news as $item)
+                                        <li>
+                                            <a href="single-post.html">
+                                                <span class="number">{{ $count }}</span>
+                                                <h3>{{ $item->title }}</h3>
+                                                <span class="author">{{ $item->author->name }}</span>
+                                            </a>
+                                        </li>
+
+                                        @php
+                                            $count++;
+                                            if ($count == 6) {
+                                                break;
+                                            }
+                                        @endphp
+
+                                    @endforeach
                                 </ul>
                             </div>
 
-                        </div> <!-- End Trending Section -->
+                        </div>
+                        <!-- End Trending Section -->
                     </div>
                 </div>
 

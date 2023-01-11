@@ -35,6 +35,7 @@
                     <ul class="footer-links footer-blog-entry list-unstyled">
                         @php $count = 0; @endphp
                         @foreach($breaking_news as $item)
+
                             <li>
                                 <a href="single-post.html" class="d-flex align-items-center">
                                     <img src="{{ asset($item->featured_image) }}" alt="" class="img-fluid me-3">
