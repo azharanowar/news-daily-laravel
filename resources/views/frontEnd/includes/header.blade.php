@@ -4,7 +4,7 @@
         <a href="{{ route('home.index') }}" class="logo d-flex align-items-center">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <!-- <img src="{{ asset('frontEnd') }}/assets/img/logo.png" alt=""> -->
-            <h1>News<span class="text-muted">Daily</span></h1>
+            <h1 class="">News <span class="text-muted">Daily</span></h1>
         </a>
 
         <nav id="navbar" class="navbar">
@@ -25,9 +25,10 @@
         </nav><!-- .navbar -->
 
         <div class="position-relative">
-            <a href="#" class="mx-2"><span class="bi-facebook"></span></a>
-            <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
-            <a href="#" class="mx-2"><span class="bi-instagram"></span></a>
+            <a href="https://facebook.com/azharanowar" class="mx-2" target="_blank"><span class="bi-facebook"></span></a>
+            <a href="https://github.com/azharanowar" class="mx-2" target="_blank"><span class="bi-github"></span></a>
+            <a href="https://linkedin.com/in/azharanowar" class="mx-2" target="_blank"><span class="bi-linkedin"></span></a>
+            <a href="https://twitter.com/azharanowar" class="mx-2" target="_blank"><span class="bi-twitter"></span></a>
 
             <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
             <i class="bi bi-list mobile-nav-toggle"></i>
