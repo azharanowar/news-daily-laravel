@@ -16,6 +16,12 @@ class HomeController extends Controller
         ]);
     }
 
+    public function allNews() {
+        return view('frontEnd.pages.all-news', [
+            'all_news'   =>  News::where('status', 1)->orderBy('id', 'desc')->get(),
+        ]);
+    }
+
     public function categoryArchive($slug) {
         $this->category = Category::where('slug', $slug)->first();
 
