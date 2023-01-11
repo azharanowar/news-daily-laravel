@@ -22,6 +22,10 @@ class Category extends Model
         self::$category->save();
     }
 
+    public function news() {
+        return $this->hasMany(News::class);
+    }
+
     public static function changeCategoryStatus($id) {
 
         self::$category = Category::find($id);;

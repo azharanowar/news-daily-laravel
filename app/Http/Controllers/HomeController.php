@@ -12,7 +12,8 @@ class HomeController extends Controller
     private $category, $tag, $news;
     public function index() {
         return view('frontEnd.pages.index', [
-            'slider_news'   =>  News::where('display_slider', 1)->where('status', 1)->take(5)->orderBy('id', 'desc')->get(),
+            'slider_news'       =>  News::where('display_slider', 1)->where('status', 1)->take(5)->orderBy('id', 'desc')->get(),
+            'home_categories'   =>  Category::all(),
         ]);
     }
 

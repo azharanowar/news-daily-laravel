@@ -5,6 +5,7 @@
 @endsection
 
 @section('main-content')
+
     <!-- ======= Hero Slider Section ======= -->
         @include('frontEnd.includes.slider')
     <!-- End Hero Slider Section -->
@@ -28,38 +29,26 @@
                             </div>
                         </div>
                     </div>
-                    <div class="post-entry-1 lg">
-                        <a href="single-post.html"><img src="{{ $breaking_news[1]->featured_image }}" alt="{{ $breaking_news[1]->title }}" class="img-fluid"></a>
-                        <div class="post-meta"><a href="{{ route('category.index', ['slug' => $breaking_news[1]->category->slug]) }}" style="color: rgba(var(--color-black-rgb), 0.4)"><span class="date">{{ $breaking_news[1]->category->name }}</span></a> <span class="mx-1">&bullet;</span> <span>{{ $breaking_news[1]->created_at->format('d-M-Y') }}</span></div>
-                        <h2><a href="single-post.html">{{ $breaking_news[1]->title }}</a></h2>
-                        <p class="mb-4 d-block">{{ $breaking_news[1]->short_description }}</p>
-
-                        <div class="d-flex align-items-center author">
-                            <div class="photo"><img src="{{ asset('frontEnd') }}/assets/img/person-1.jpg" alt="" class="img-fluid"></div>
-                            <div class="name">
-                                <h3 class="m-0 p-0">{{ $breaking_news[1]->author->name }}</h3>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
 
                 <div class="col-lg-8">
                     <div class="row g-5">
                         <div class="col-lg-4 border-start custom-border">
-                            @php $count = 0; @endphp
-                            @foreach($breaking_news as $item)
+                            @foreach($breaking_news as $key => $item)
+                                @if($key == 0)
+                                    @php continue; @endphp
+                                @endif
                                 <div class="post-entry-1">
                                     <a href="single-post.html"><img src="{{ $item->featured_image }}" alt="" class="img-fluid"></a>
                                     <div class="post-meta"><a href="{{ route('category.index', ['slug' => $item->category->slug]) }}" style="color: rgba(var(--color-black-rgb), 0.4)"><span class="date">{{ $item->category->name }}</span></a> <span class="mx-1">&bullet;</span> <span>{{ $item->created_at->format('d-M-Y') }}</span></div>
                                     <h2><a href="single-post.html">{{ $item->title }}</a></h2>
                                 </div>
                                 @php
-                                    $count++;
-                                    if ($count == 3) {
+                                    if ($key == 3) {
                                         echo '</div>';
                                         echo '<div class="col-lg-4 border-start custom-border">';
-                                    } else if ($count == 6) {
+                                    } else if ($key == 6) {
                                         break;
                                     }
                                 @endphp
@@ -102,6 +91,13 @@
         </div>
     </section>
     <!-- End Post Grid Section -->
+
+    @foreach($home_categories as $home_category)
+        <br>{{ $home_category->name }}<br>
+        @foreach($home_category->news as $key => $item)
+            @if($key = 0) continue; @endif
+        @endforeach
+    @endforeach
 
     <!-- ======= Culture Category Section ======= -->
     <section class="category-section">
