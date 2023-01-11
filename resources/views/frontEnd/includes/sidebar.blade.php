@@ -16,36 +16,57 @@
 
         <!-- Breaking -->
         <div class="tab-pane fade show active" id="pills-breaking" role="tabpanel" aria-labelledby="pills-latest-tab">
-            @foreach($breaking_news as $item)
+            @foreach($breaking_news as $key => $item)
                 <div class="post-entry-1 border-bottom">
                     <div class="post-meta"><a href="{{ route('category.index', ['slug' => $item->category->slug]) }}" style="color: rgba(var(--color-black-rgb), 0.4)"><span class="date">{{ $item->category->name }}</span></a> <span class="mx-1">&bullet;</span> <span>{{ $item->created_at->format('d-M-Y') }}</span></div>
                     <h2 class="mb-2"><a href="#">{{ $item->title }}</a></h2>
                     <span class="author mb-3 d-block">{{ $item->author->name }}</span>
                 </div>
+
+                @php
+                    if ($key == 10) {
+                        break;
+                    }
+                @endphp
+
             @endforeach
 
         </div> <!-- End Breaking -->
 
         <!-- Popular -->
         <div class="tab-pane fade" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
-            @foreach($popular_news as $item)
+            @foreach($popular_news as $key => $item)
                 <div class="post-entry-1 border-bottom">
                     <div class="post-meta"><a href="{{ route('category.index', ['slug' => $item->category->slug]) }}" style="color: rgba(var(--color-black-rgb), 0.4)"><span class="date">{{ $item->category->name }}</span></a> <span class="mx-1">&bullet;</span> <span>{{ $item->created_at->format('d-M-Y') }}</span></div>
                     <h2 class="mb-2"><a href="#">{{ $item->title }}</a></h2>
                     <span class="author mb-3 d-block">{{ $item->author->name }}</span>
                 </div>
+
+                @php
+                    if ($key == 10) {
+                        break;
+                    }
+                @endphp
+
             @endforeach
 
         </div> <!-- End Popular -->
 
         <!-- Trending -->
         <div class="tab-pane fade" id="pills-trending" role="tabpanel" aria-labelledby="pills-trending-tab">
-            @foreach($trending_news as $item)
+            @foreach($trending_news as $key => $item)
                 <div class="post-entry-1 border-bottom">
                     <div class="post-meta"><a href="{{ route('category.index', ['slug' => $item->category->slug]) }}" style="color: rgba(var(--color-black-rgb), 0.4)"><span class="date">{{ $item->category->name }}</span></a> <span class="mx-1">&bullet;</span> <span>{{ $item->created_at->format('d-M-Y') }}</span></div>
                     <h2 class="mb-2"><a href="#">{{ $item->title }}</a></h2>
                     <span class="author mb-3 d-block">{{ $item->author->name }}</span>
                 </div>
+
+                @php
+                    if ($key == 10) {
+                        break;
+                    }
+                @endphp
+
             @endforeach
         </div> <!-- End Trending -->
 
