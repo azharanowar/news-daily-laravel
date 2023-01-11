@@ -14,8 +14,7 @@ class CategoryController extends Controller
 
     public function saveCategory(Request $request) {
         $this->validate($request, [
-            'name'   =>  'required',
-            'slug'   =>  'required',
+            'name'   =>  'required|unique:categories,name',
         ]);
 
         Category::saveNewCategory($request);
@@ -49,7 +48,7 @@ class CategoryController extends Controller
 
     public function saveUpdatedCategoryInfo(Request $request, $id) {
         $this->validate($request, [
-            'name'   =>  'required',
+            'name'   =>  'required|unique:categories,name',
             'slug'   =>  [
                 Rule::unique('categories')->ignore($id)
             ],
