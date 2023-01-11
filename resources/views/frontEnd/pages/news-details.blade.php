@@ -14,7 +14,7 @@
                     <div class="single-post">
                         <div class="post-meta"><a href="{{ route('category.index', ['slug' => $news_details->category->slug]) }}" style="color: rgba(var(--color-black-rgb), 0.4)"><span class="date">{{ $news_details->category->name }}</span></a> <span class="mx-1">&bullet;</span> <span>{{ $news_details->created_at->format('d-M-Y') }}</span></div>
                         <h1 class="">{{ $news_details->title }}</h1>
-                        <p class="text-muted italic">{{ $news_details->short_description }}</p>
+                        <p class="text-muted" style="font-style: italic;">{{ $news_details->short_description }}</p>
                         <img src="{{ asset($news_details->featured_image) }}" alt="{{ $news_details->title }}" class="img-fluid">
                         <div class="d-flex align-items-center author my-4 ps-2" style="border-left: 4px solid rgba(var(--color-black-rgb), 0.4);">
                             <div class="photo"><img src="{{ asset('frontEnd') }}/assets/img/person-2.jpg" alt="" class="img-fluid"></div>
