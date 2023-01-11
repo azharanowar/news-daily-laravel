@@ -69,6 +69,12 @@ class News extends Model
         self::$news->save();
     }
 
+    public static function deleteNews($id) {
+        self::$news = News::find($id);
+        self::deleteExistingImage(self::$news->image);
+        self::$news->delete();
+    }
+
     public function category() {
         return $this->belongsTo(Category::class);
     }

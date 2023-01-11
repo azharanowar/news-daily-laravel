@@ -63,7 +63,7 @@
                                         <div class="d-flex" style="gap: 0.30rem;">
                                             <a href="{{ route('news.change-status', ['id' => $item->id]) }}" class="btn btn-sm btn-secondary">{{ $item->status == 0 ? 'Active' : 'Inactive' }}</a>
                                             <a href="{{ route('news.update', ['id' => $item->id]) }}" class="btn btn-sm btn-success">Update</a>
-                                            <form action="{{ route('category.delete', ['id' => $item->id]) }}" method="POST">
+                                            <form action="{{ route('news.delete', ['id' => $item->id]) }}" method="POST">
                                                 @csrf
                                                 <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are your sure to delete this news?')">Delete</button>
                                             </form>

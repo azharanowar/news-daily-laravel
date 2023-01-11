@@ -23,7 +23,7 @@ class NewsController extends Controller
     public function saveNews(Request $request) {
 
         $this->validate($request, [
-           'title'            =>  'required',
+           'title'            =>  'required|unique:news,title',
            'category_id'      =>  'required',
            'tags_id'          =>  'required',
            'author_id'        =>  'required',
@@ -70,7 +70,7 @@ class NewsController extends Controller
     public function saveUpdatedNewsInfo(Request $request, $id) {
 
         $this->validate($request, [
-           'title'      =>  'required',
+           'title'      =>  'required|unique:news,title',
            'slug'       =>  [
                Rule::unique('news')->ignore($id)
            ],
@@ -88,6 +88,12 @@ class NewsController extends Controller
         News::saveUpdatedCategoryInfo($request, $id);
 
         return redirect('/dashboard/news/manage-news')->with('message', 'News info successfully updated.');
+    }
+
+    public function deleteNews(Request $request, $id) {
+        News::deleteNews($id);
+
+        return redirect('/dashboard/news/manage-news')->with('message', 'News successfully deleted.');
     }
 
     public function isUpdateFeaturedImageRequired($id) {

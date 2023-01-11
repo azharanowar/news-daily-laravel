@@ -43,6 +43,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'
     Route::get('/dashboard/news/change-status/{id}', [NewsController::class, 'changeNewsStatus'])->name('news.change-status');
     Route::get('/dashboard/news/update/{id}', [NewsController::class, 'updateNews'])->name('news.update');
     Route::post('/dashboard/news/save-updated-news-info/{id}', [NewsController::class, 'saveUpdatedNewsInfo'])->name('news.save-updated-news-info');
+    Route::post('/dashboard/news/delete/{id}', [NewsController::class, 'deleteNews'])->name('news.delete');
 
     // Category Routes
     Route::get('/dashboard/category/add-category', [CategoryController::class, 'addCategory'])->name('category.add-category');
