@@ -19,6 +19,7 @@ class Category extends Model
         self::$category->description = $request->description;
         self::$category->image = self::getSavedImageURL($request);
         self::$category->status = $request->status;
+        self::$category->featured_home = $request->featured_home ?? 0;
         self::$category->save();
     }
 
@@ -52,6 +53,7 @@ class Category extends Model
         self::$category->slug = isset($request->slug) ? Str::slug($request->slug) : Str::slug($request->name);
         self::$category->description = $request->description;
         self::$category->status = $request->status;
+        self::$category->featured_home = $request->featured_home ?? 0;
         self::$category->save();
     }
 

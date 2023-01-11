@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->text('image')->nullable();
             $table->tinyInteger('status')->default(0);
+            $table->tinyInteger('featured_home')->default(0);
             $table->timestamps();
         });
     }

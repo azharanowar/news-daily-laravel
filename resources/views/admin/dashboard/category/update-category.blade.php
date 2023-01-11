@@ -50,6 +50,15 @@
                             </div>
                         </div>
                     </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Display to Home Page: </label>
+                        <div class="bg-white rounded border py-2 px-3">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="featured_home" id="featuredHome" value="1" {{ $category->featured_home ? 'checked' : '' }}>
+                                <label class="form-check-label" for="featuredHome">Featured to Home Page</label>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="mb-3">
                         <button type="submit" class="btn btn-success">Save Category</button>

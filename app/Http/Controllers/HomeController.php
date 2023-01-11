@@ -13,7 +13,7 @@ class HomeController extends Controller
     public function index() {
         return view('frontEnd.pages.index', [
             'slider_news'       =>  News::where('display_slider', 1)->where('status', 1)->take(5)->orderBy('id', 'desc')->get(),
-            'home_categories'   =>  Category::all(),
+            'home_categories'   =>  Category::where('featured_home', 1)->where('status', 1)->take(4)->orderBy('id', 'desc')->get(),
         ]);
     }
 
