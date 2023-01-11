@@ -15,6 +15,7 @@ class CategoryController extends Controller
     public function saveCategory(Request $request) {
         $this->validate($request, [
             'name'   =>  'required',
+            'slug'   =>  'required',
         ]);
 
         Category::saveNewCategory($request);

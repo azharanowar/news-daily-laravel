@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Tag;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Str;
 
 class TagController extends Controller
 {
@@ -13,8 +14,9 @@ class TagController extends Controller
     }
 
     public function saveTag(Request $request) {
+        $request->slug = Str::slug($request->name);
         $this->validate($request, [
-           'name'   =>  'required',
+           'name'   =>  'required|unique:tags,name',
         ]);
 
         Tag::saveNewCategory($request);
@@ -47,7 +49,7 @@ class TagController extends Controller
 
     public function saveUpdatedTagInfo(Request $request, $id) {
         $this->validate($request, [
-           'name'   =>  'required',
+           'name'   =>  'required|unique:tags,name',
            'slug'   =>  [
                Rule::unique('tags')->ignore($id),
            ]

@@ -27,6 +27,7 @@ return new class extends Migration
             $table->tinyInteger('display_popular')->default(0);
             $table->tinyInteger('display_trending')->default(0);
             $table->tinyInteger('display_breaking')->default(0);
+            $table->tinyInteger('display_slider')->default(0);
             $table->tinyInteger('comment')->default(1);
             $table->timestamps();
         });

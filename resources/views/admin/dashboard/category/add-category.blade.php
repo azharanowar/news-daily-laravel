@@ -22,6 +22,7 @@
                         <label for="name" class="form-label">Name: </label>
                         <input type="text" class="form-control {{ $errors->has('name') ? 'border-danger' : '' }}" id="name" name="name" placeholder="Enter category name..." autofocus>
                         <span class="text-danger">{{ $errors->has('name') ? $errors->first('name') : '' }}</span>
+                        <span class="text-danger">{{ $errors->has('slug') ? 'Category can' . 't be duplicate' : '' }}</span>
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
