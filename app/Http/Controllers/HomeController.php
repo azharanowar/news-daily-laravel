@@ -50,4 +50,8 @@ class HomeController extends Controller
             'news_details'  =>  News::where('slug', $slug)->first(),
         ]);
     }
+
+    public function aboutMe() {
+        return view('frontEnd.pages.about-me');
+    }
 }

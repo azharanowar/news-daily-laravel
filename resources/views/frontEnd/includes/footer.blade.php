@@ -15,7 +15,7 @@
                         <li><a href="{{ route('home.index') }}"><i class="bi bi-chevron-right"></i> Home</a></li>
                         <li><a href="{{ route('news.all') }}"><i class="bi bi-chevron-right"></i> All News</a></li>
                         <li><a href="{{ route('news.breaking-news') }}"><i class="bi bi-chevron-right"></i> Breaking News</a></li>
-                        <li><a href="about.html"><i class="bi bi-chevron-right"></i> About us</a></li>
+                        <li><a href="{{ route('home.about-me') }}"><i class="bi bi-chevron-right"></i> About Me</a></li>
                         <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>

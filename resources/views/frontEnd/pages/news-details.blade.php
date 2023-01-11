@@ -1,7 +1,7 @@
 @extends('frontEnd.master')
 
 @section('title')
-    All News
+    News Details
 @endsection
 
 @section('main-content')
