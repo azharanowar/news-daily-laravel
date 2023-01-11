@@ -44,4 +44,10 @@ class HomeController extends Controller
     public function breakingNews() {
         return view('frontEnd.pages.breaking-news');
     }
+
+    public function newsDetails($slug) {
+        return view('frontEnd.pages.news-details', [
+            'news_details'  =>  News::where('slug', $slug)->first(),
+        ]);
+    }
 }
