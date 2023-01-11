@@ -1,7 +1,7 @@
 @extends('frontEnd.master')
 
 @section('title')
-    About Us
+    About Me
 @endsection
 
 @section('main-content')
@@ -9,7 +9,7 @@
         <div class="container" data-aos="fade-up">
             <div class="row">
                 <div class="col-lg-12 text-center mb-5">
-                    <h1 class="page-title">About us</h1>
+                    <h1 class="page-title">About Me</h1>
                 </div>
             </div>
 
@@ -20,7 +20,7 @@
                         <img src="{{ asset('frontEnd') }}/assets/img/post-landscape-2.jpg" alt="" class="img-fluid">
                     </a>
                     <div class="ps-md-5 mt-4 mt-md-0">
-                        <div class="post-meta mt-4">About us</div>
+                        <div class="post-meta mt-4">About Me</div>
                         <h2 class="mb-4 display-4">Company History</h2>
 
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, perspiciatis repellat maxime, adipisci non ipsam at itaque rerum vitae, necessitatibus nulla animi expedita cumque provident inventore? Voluptatum in tempora earum deleniti, culpa odit veniam, ea reiciendis sunt ullam temporibus aut!</p>

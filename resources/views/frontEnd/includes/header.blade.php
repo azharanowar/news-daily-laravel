@@ -20,7 +20,7 @@
                 </li>
 
                 <li><a href="{{ route('home.about-me') }}">About Me</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{{ route('home.contact-me') }}">Contact</a></li>
             </ul>
         </nav><!-- .navbar -->
 

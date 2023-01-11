@@ -22,6 +22,8 @@ use App\Http\Controllers\HomeController;
 // Frontend routes.
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/about-me', [HomeController::class, 'aboutMe'])->name('home.about-me');
+Route::get('/contact-me', [HomeController::class, 'contactMe'])->name('home.contact-me');
+Route::post('/save-contact-info', [HomeController::class, 'saveContactInfo'])->name('home.save-contact-info');
 Route::get('/breaking-news', [HomeController::class, 'breakingNews'])->name('news.breaking-news');
 Route::get('/all-news', [HomeController::class, 'allNews'])->name('news.all');
 Route::get('/news/{slug}', [HomeController::class, 'newsDetails'])->name('news.details');

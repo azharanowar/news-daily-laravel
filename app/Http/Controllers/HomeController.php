@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\News;
 use App\Models\Tag;
+use App\Models\ContactForm;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -53,5 +54,22 @@ class HomeController extends Controller
 
     public function aboutMe() {
         return view('frontEnd.pages.about-me');
+    }
+
+    public function contactMe() {
+        return view('frontEnd.pages.contact-me');
+    }
+
+    public function saveContactInfo(Request $request) {
+        $this->validate($request, [
+            'name'      =>  'required',
+            'email'     =>  'required|unique:contact_forms,email',
+            'subject'   =>  'required',
+            'message'   =>  'required',
+        ]);
+
+        ContactForm::saveContactFormData($request);
+
+        return redirect('/contact-me')->with('message', "Thanks for contact with me, I received your message and will back to you as soon as possible.");
     }
 }

@@ -211,7 +211,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Desktop Navigation 
+# Desktop Navigation
 --------------------------------------------------------------*/
 @media (min-width: 1280px) {
   .navbar {
@@ -1098,19 +1098,19 @@ section {
   }
 }
 
-.contact .php-email-form {
+.contact .contact-me-form {
   box-shadow: 0 0 30px rgba(var(--color-black-rgb), 0.1);
   padding: 30px;
   background: var(--color-white);
 }
 
 @media (max-width: 640px) {
-  .contact .php-email-form {
+  .contact .contact-me-form {
     padding: 20px;
   }
 }
 
-.contact .php-email-form .error-message {
+.contact .contact-me-form .error-message {
   display: none;
   color: var(--color-white);
   background: var(--color-red);
@@ -1119,11 +1119,11 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br+br {
+.contact .contact-me-form .error-message br+br {
   margin-top: 25px;
 }
 
-.contact .php-email-form .sent-message {
+.contact .contact-me-form .sent-message {
   display: none;
   color: var(--color-white);
   background: var(--color-green);
@@ -1132,14 +1132,14 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .loading {
+.contact .contact-me-form .loading {
   display: none;
   background: var(--color-white);
   text-align: center;
   padding: 15px;
 }
 
-.contact .php-email-form .loading:before {
+.contact .contact-me-form .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -1152,24 +1152,24 @@ section {
   animation: animate-loading 1s linear infinite;
 }
 
-.contact .php-email-form .form-group {
+.contact .contact-me-form .form-group {
   margin-bottom: 20px;
 }
 
-.contact .php-email-form input,
-.contact .php-email-form textarea {
+.contact .contact-me-form input,
+.contact .contact-me-form textarea {
   padding: 10px 14px;
   border-radius: 0;
   box-shadow: none;
   font-size: 15px;
 }
 
-.contact .php-email-form input::focus,
-.contact .php-email-form textarea::focus {
+.contact .contact-me-form input::focus,
+.contact .contact-me-form textarea::focus {
   background-color: var(--color-primary);
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .contact-me-form button[type=submit] {
   background: var(--color-primary);
   border: 0;
   padding: 10px 30px;
@@ -1178,7 +1178,7 @@ section {
   cursor: pointer;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .contact-me-form button[type=submit]:hover {
   background: rgba(var(--color-primary-rgb), 0.8);
 }
 
