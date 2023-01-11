@@ -70,7 +70,10 @@ class NewsController extends Controller
     public function saveUpdatedNewsInfo(Request $request, $id) {
 
         $this->validate($request, [
-           'title'      =>  'required|unique:news,title',
+           'title'      =>  [
+               'required',
+               Rule::unique('news')->ignore($id)
+           ],
            'slug'       =>  [
                Rule::unique('news')->ignore($id)
            ],

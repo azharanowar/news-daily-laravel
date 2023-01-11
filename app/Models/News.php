@@ -62,9 +62,10 @@ class News extends Model
         self::$news->short_description = $request->short_description;
         self::$news->full_description = $request->full_description;
         self::$news->status = $request->status;
-        self::$news->display_popular = isset($request->display_popular) ? $request->display_popular : 0;
-        self::$news->display_trending = isset($request->display_trending) ? $request->display_trending : 0;
-        self::$news->display_breaking = isset($request->display_breaking) ? $request->display_breaking : 0;
+        self::$news->display_popular = $request->display_popular ?? 0;
+        self::$news->display_trending = $request->display_trending ?? 0;
+        self::$news->display_breaking = $request->display_breaking ?? 0;
+        self::$news->display_slider = $request->display_slider ?? 0;
         self::$news->comment = $request->comment;
         self::$news->save();
     }

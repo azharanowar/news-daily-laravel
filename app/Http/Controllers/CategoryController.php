@@ -19,7 +19,7 @@ class CategoryController extends Controller
 
         Category::saveNewCategory($request);
 
-        return back()->with('message', 'New category successfully added.');
+        return redirect('/dashboard/category/add-category')->with('message', 'New category successfully added.');
     }
 
     public function manageCategories() {
@@ -48,7 +48,10 @@ class CategoryController extends Controller
 
     public function saveUpdatedCategoryInfo(Request $request, $id) {
         $this->validate($request, [
-            'name'   =>  'required|unique:categories,name',
+            'name'   =>  [
+                'required',
+                Rule::unique('categories')->ignore($id),
+            ],
             'slug'   =>  [
                 Rule::unique('categories')->ignore($id)
             ],

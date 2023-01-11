@@ -21,7 +21,7 @@ class TagController extends Controller
 
         Tag::saveNewCategory($request);
 
-        return back()->with('message', 'New tag successfully added.');
+        return redirect('/dashboard/tags/add-tag')->with('message', 'New tag successfully added.');
     }
 
     public function manageTags() {
@@ -49,7 +49,10 @@ class TagController extends Controller
 
     public function saveUpdatedTagInfo(Request $request, $id) {
         $this->validate($request, [
-           'name'   =>  'required|unique:tags,name',
+           'name'   =>  [
+               'required',
+               Rule::unique('tags')->ignore($id),
+           ],
            'slug'   =>  [
                Rule::unique('tags')->ignore($id),
            ]
@@ -57,12 +60,12 @@ class TagController extends Controller
 
         Tag::saveUpdatedTagInfo($request, $id);
 
-        return redirect('/tags/manage-tags')->with('message', 'Tag info successfully updated.');
+        return redirect('/dashboard/tags/manage-tags')->with('message', 'Tag info successfully updated.');
     }
 
     public function deleteTag(Request $request, $id) {
         Tag::deleteTag($id);
 
-        return redirect('/tags/manage-tags')->with('message', 'Tag successfully deleted.');
+        return redirect('/dashboard/tags/manage-tags')->with('message', 'Tag successfully deleted.');
     }
 }

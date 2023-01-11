@@ -107,6 +107,10 @@
                                 <input class="form-check-input" type="checkbox" name="display_breaking" id="displayBreaking" value="1" {{ $single_news->display_breaking == 1 ? 'checked' : '' }}>
                                 <label class="form-check-label" for="displayBreaking">Breaking News</label>
                             </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="display_slider" id="displaySlider" value="1" {{ $single_news->display_slider == 1 ? 'checked' : '' }}>
+                                <label class="form-check-label" for="displaySlider">Add to Slider</label>
+                            </div>
                         </div>
                     </div>
                     <div class="mb-3">

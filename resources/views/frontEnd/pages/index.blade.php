@@ -92,13 +92,6 @@
     </section>
     <!-- End Post Grid Section -->
 
-    @foreach($home_categories as $home_category)
-        <br>{{ $home_category->name }}<br>
-        @foreach($home_category->news as $key => $item)
-            @if($key = 0) continue; @endif
-        @endforeach
-    @endforeach
-
     <!-- ======= Culture Category Section ======= -->
     <section class="category-section">
         <div class="container" data-aos="fade-up">
@@ -195,7 +188,8 @@
                 </div>
             </div>
         </div>
-    </section><!-- End Culture Category Section -->
+    </section>
+    <!-- End Culture Category Section -->
 
     <!-- ======= Business Category Section ======= -->
     <section class="category-section">
@@ -292,9 +286,10 @@
                 </div>
             </div>
         </div>
-    </section><!-- End Business Category Section -->
+    </section>
+    <!-- End Business Category Section -->
 
-    <!-- ======= Lifestyle Category Section ======= -->
+    <!-- ======= Category Based News ======= -->
     <section class="category-section">
         <div class="container" data-aos="fade-up">
 
@@ -413,5 +408,6 @@
 
             </div> <!-- End .row -->
         </div>
-    </section><!-- End Lifestyle Category Section -->
+    </section>
+    <!-- End Category Based New -->
 @endsection
