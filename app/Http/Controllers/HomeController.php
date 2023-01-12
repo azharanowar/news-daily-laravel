@@ -7,6 +7,7 @@ use App\Models\News;
 use App\Models\Tag;
 use App\Models\ContactForm;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {

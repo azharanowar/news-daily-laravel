@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use App\Models\Category;
 use PharIo\Manifest\Author;
+use BeyondCode\Comments\Traits\HasComments;
 
 class News extends Model
 {
     use HasFactory;
+    use HasComments;
     private static $news, $image, $imageNewName, $directory, $imageURL;
 
     public static function saveNewNews($request) {
