@@ -8,6 +8,7 @@ use App\Http\Controllers\TagController;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,9 @@ Route::get('/all-news', [HomeController::class, 'allNews'])->name('news.all');
 Route::get('/news/{slug}', [HomeController::class, 'newsDetails'])->name('news.details');
 Route::get('/category/{slug}', [HomeController::class, 'categoryArchive'])->name('category.index');
 Route::get('/tag/{slug}', [HomeController::class, 'tagArchive'])->name('tag.index');
-Route::get('/news.add-comment', [CommentController::class, 'makeComment'])->name('news.add-comment');
+
+Route::get('/customer', [CustomerController::class, 'index'])->name('customer.customer');
+Route::post('/register-customer', [CustomerController::class, 'index'])->name('customer.register-customer');
 
 // Backend routes.
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
